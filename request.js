@@ -37,6 +37,7 @@ callback = function(response) {
   }
   
   var req = http.request(options_benjamin, callback);
+  
   req.write('')
   req.end();
 
