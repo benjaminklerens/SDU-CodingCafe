@@ -4,7 +4,7 @@ var app = express();
 
 // on the request to root (localhost:3000/)
 app.get('/', function (req, res) {
-    res.send("Velkommen til Code Café's root");
+    res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get('/benjamin', function (req, res) {
