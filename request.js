@@ -1,29 +1,10 @@
 const http = require('http')
-
-const options_root = {
-    host: 'localhost',
-    port: 8000,
-    path: '/',
+var current_endpoint = ''
+const options = {
+    host: 'sdu-codecafe.herokuapp.com',
+    path: '/' + current_endpoint,
     method: 'GET',
-    headers: {}
 }
-
-const options_benjamin = {
-    host: 'localhost',
-    port: 8000,
-    path: '/benjamin',
-    method: 'GET',
-    headers: {}
-}
-
-const options_sarah = {
-    host: 'localhost',
-    port: 8000,
-    path: '/sarah',
-    method: 'GET',
-    headers: {}
-}
-
 
 callback = function(response) {
     var str = ''
@@ -36,8 +17,7 @@ callback = function(response) {
     });
   }
   
-  var req = http.request(options_benjamin, callback);
-  
+  var req = http.request(options, callback);
   req.write('')
   req.end();
 
